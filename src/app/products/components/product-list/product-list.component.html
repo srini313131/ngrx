@@ -1,1 +1,19 @@
-<p>product-list works!</p>
+<table class="table">
+    <tr>
+        <th>Product code</th>
+        <th>Name</th>
+        <th>Specifications</th>
+
+        <th>Avaialbility</th>
+
+    </tr>
+
+    <tr *ngFor= "let product of (products$ | async)">
+        <td > {{product.productId}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.specifications}}</td>
+
+        <td>{{product.avaialble}}</td>
+
+    </tr>
+</table>

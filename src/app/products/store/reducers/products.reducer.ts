@@ -11,6 +11,7 @@ products : [
     {
         productId: 13001,
       name: 'Lenovo Y700',
+      specifications: '15 inch screen, 128gb ssd, 16gb ram ',
       avaialble: true
     }
 ],

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import * as fromStore from '../../store'
+import {Product} from '../../models/model.product';
+import {Observable} from 'rxjs'
 
 @Component({
   selector: 'app-product-list',
@@ -8,11 +10,12 @@ import * as fromStore from '../../store'
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  products$: Observable<Product[]>
 
   constructor(private store : Store<fromStore.ProductsState>) { }
 
   ngOnInit() {
-this.store.select('products').subscribe(state=> console.log(state))
+this.products$=this.store.select(fromStore.getProducts)
   }
 
 }
